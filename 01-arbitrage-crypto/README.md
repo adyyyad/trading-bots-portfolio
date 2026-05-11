@@ -27,4 +27,4 @@ Multi-timeframe trend following system for forex markets.
 - Daily loss limits
 
 ## Contact
-[Your Email]
+[mariusstancu2018@gmail.com]

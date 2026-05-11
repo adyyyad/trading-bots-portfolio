@@ -1,0 +1,35 @@
+void ProcessWithMember(SEnsembleMember &member, double &features[], double &output[]) {
+        // Simplified processing - in production use actual neural network
+        ArrayResize(output, 5);
+        
+        // Mock prediction based on architecture
+        switch(member.arch_type) {
+            case NEURAL_ARCH_BASIC: // MLP
+                output[0] = 0.5 + (MathRand()/32767.0 - 0.5) * 0.2;
+                output[1] = 0.5 + (MathRand()/32767.0 - 0.5) * 0.2;
+                break;
+            case NEURAL_ARCH_DEEP: // Deep
+                output[0] = 0.5 + (MathRand()/32767.0 - 0.5) * 0.15;
+                output[1] = 0.5 + (MathRand()/32767.0 - 0.5) * 0.15;
+                break;
+            case NEURAL_ARCH_LSTM: // LSTM
+                output[0] = 0.5 + (MathRand()/32767.0 - 0.5) * 0.1;
+                output[1] = 0.5 + (MathRand()/32767.0 - 0.5) * 0.1;
+                break;
+            default:
+                output[0] = 0.5;
+                output[1] = 0.5;
+                break;
+        }
+        
+        // Fill other outputs
+        for(int i = 2; i < 5; i++) {
+            output[i] = (MathRand()/32767.0) * 0.5;
+        }
+    }
+    
+    double CalculateMemberPerformance(int member_idx) {
+        // Simplified performance calculation
+        // In production, track actual trade performance
+        return 0.6 + (MathRand()/32767.0) * 0.3; // 0.6-0.9 random
+    }
